@@ -1,0 +1,371 @@
+/* src/styles/LecturerDashboard.module.css */
+/* ============================================
+   LECTURER DASHBOARD SPECIFIC STYLES
+   These styles ONLY apply to LecturerDashboard
+   ============================================ */
+
+/* Main container */
+.dashboardContainer {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  transition: var(--transition);
+}
+
+/* Navigation bar */
+.navBar {
+  background: var(--bg-nav, linear-gradient(135deg, var(--primary) 0%, #7c3aed 100%));
+  color: var(--text-white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Statistics cards */
+.statCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.statIconPrimary {
+  background-color: var(--primary-light);
+}
+
+.statIconSuccess {
+  background-color: var(--success-light);
+}
+
+.statIconWarning {
+  background-color: var(--warning-light);
+}
+
+.statIconInfo {
+  background-color: var(--info-light);
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Notice cards */
+.noticeCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  transition: var(--transition);
+  margin-bottom: 1rem;
+}
+
+.noticeCard:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.noticeTitle {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.noticeMessage {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.noticeMeta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+/* Badges */
+.badgeCourse {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badgeDate {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+.badgeViews {
+  background-color: var(--info-light);
+  color: var(--info-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+/* Tab buttons */
+.tabButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.tabButtonActive {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.tabButton:hover {
+  color: var(--primary);
+}
+
+/* Search input */
+.searchInput {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  width: 100%;
+  transition: var(--transition);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Draft cards */
+.draftCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.draftCard:hover {
+  border-color: var(--warning);
+  transform: translateX(4px);
+}
+
+/* Chart containers */
+.chartContainer {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.chartContainer:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Notification dropdown */
+.notificationDropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  min-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 1100;
+  margin-top: 0.5rem;
+}
+
+.notificationItem {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.notificationItem:hover {
+  background-color: var(--bg-secondary);
+}
+
+.notificationUnread {
+  background-color: var(--primary-light);
+}
+
+.notificationRead {
+  opacity: 0.6;
+}
+
+/* Loading states */
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Empty states */
+.emptyState {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius);
+  border: 1px dashed var(--border);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .statValue {
+    font-size: 1.5rem;
+  }
+  
+  .tabButton {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .statCard {
+    padding: 1rem;
+  }
+  
+  .statIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+  
+  .noticeCard {
+    padding: 0.75rem;
+  }
+  
+  .noticeTitle {
+    font-size: 1rem;
+  }
+  
+  .badgeCourse,
+  .badgeDate,
+  .badgeViews {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .statValue {
+    font-size: 1.75rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navBar,
+  .tabButton,
+  button,
+  .notificationDropdown {
+    display: none;
+  }
+  
+  .dashboardContainer {
+    background-color: white;
+  }
+  
+  .statCard {
+    border: 1px solid #ddd;
+    box-shadow: none;
+  }
+  
+  .noticeCard {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+/* Animation for new notices */
+@keyframes highlight {
+  0% {
+    background-color: var(--primary-light);
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: var(--bg-card);
+    transform: scale(1);
+  }
+}
+
+.noticeNew {
+  animation: highlight 1s ease-out;
+}
+
+/* Custom scrollbar for notification dropdown */
+.notificationDropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+.notificationDropdown::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.notificationDropdown::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Focus styles for accessibility */
+.tabButton:focus-visible,
+.searchInput:focus-visible,
+.statCard:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

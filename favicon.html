@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Favicon</title>
+</head>
+<body>
+    <canvas id="canvas" width="64" height="64"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Background circle
+        ctx.beginPath();
+        ctx.arc(32, 32, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = '#10B981';
+        ctx.fill();
+        
+        // Graduation cap
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.moveTo(32, 12);
+        ctx.lineTo(12, 28);
+        ctx.lineTo(32, 44);
+        ctx.lineTo(52, 28);
+        ctx.fill();
+        
+        // Cap base
+        ctx.fillRect(20, 30, 24, 12);
+        
+        // Tassel
+        ctx.beginPath();
+        ctx.moveTo(52, 28);
+        ctx.lineTo(58, 38);
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#F59E0B';
+        ctx.stroke();
+        
+        // Download the image
+        const link = document.createElement('a');
+        link.download = 'favicon.ico';
+        link.href = canvas.toDataURL('image/x-icon');
+        link.click();
+        
+        document.body.innerHTML = '<h2>✅ favicon.ico has been downloaded to your computer!</h2><p>Copy this file to your public folder.</p>';
+    </script>
+</body>
+</html>
