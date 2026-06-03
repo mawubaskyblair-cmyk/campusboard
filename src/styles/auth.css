@@ -3,17 +3,18 @@
 .login-container {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
-  background-image: url('/Campus.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: #0f172a; /* Fallback color */
+  overflow: hidden; 
+  background: linear-gradient(135deg, #3E2723, #8BC34A);
 }
 
 .login-bg {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #3E2723, #8BC34A);
+  z-index: 0;
 }
 
 .login-overlay {
